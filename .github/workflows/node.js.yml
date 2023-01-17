@@ -28,7 +28,7 @@ jobs:
         run: touch db.sqlite
       - name: Create env
         run: |
-          cp .env.example .env
+          touch .env
           echo TYPE = test >> .env
           echo DB_NAME = db.sqlite >> .env
           echo SECRET = testing >> .env
