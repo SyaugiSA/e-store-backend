@@ -31,5 +31,7 @@ jobs:
         env:
           TYPE: test
           DB_NAME: db.sqlite
+      - name: Show env
+        run: cat .env
       - name: Unit Test
         run: yarn test
