@@ -27,10 +27,12 @@ jobs:
       - name: Create Database
         run: touch db.sqlite
       - name: Create env
-        run: cp .env.example .env
-        env:
-          TYPE: test
-          DB_NAME: db.sqlite
+        run: |
+          cp .env.example .env
+          echo TYPE = test >> .env
+          echo DB_NAME = db.sqlite >> .env
+          echo SECRET = testing >> .env
+          echo EXPIRED = 1 day >> .env
       - name: Show env
         run: cat .env
       - name: Unit Test
